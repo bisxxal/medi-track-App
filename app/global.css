@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base{
+    background-color: #3352cc;
+  }
+  .textbase{
+    color: #3352cc;
+  }
+  .buttonbg{
+    color: #ffffff; 
+    /* background-image: */
+     background-image: linear-gradient(to top, var(--tw-gradient-stops)); 
+    background-color: #6366F1; 
+    background-color: #8B5CF6; 
+    
+    /* @apply bg-gradient-to-br text-white rounded-full   from-[#3352CC] font-medium to-[#1C2D70]; */
+  }
+.buttonbg2{
+    /* @apply bg-gradient-to-r from-indigo-500 text-white via-purple-500 to-pink-500; */
+
+    color: #ffffff;  
+     background-image: linear-gradient(to top, var(--tw-gradient-stops)); 
+background-color: #6366F1; 
+background-color: #8B5CF6; 
+  } 
