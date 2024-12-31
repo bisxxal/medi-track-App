@@ -83,5 +83,4 @@ const MedicineList = () => {
     </View>
   )
 }
-
 export default MedicineList

@@ -10,9 +10,8 @@ export default function MedicineCard({item , selectedDate ,key}:any) {
   return (
       <TouchableOpacity onPress={()=>router.push({
                 pathname:'/action-model',
-               params:{...item , selectedDate:selectedDate}
+               params:{...item , selectedDate:selectedDate , action:status?.status , actionDate:status?.date , icon:item?.type?.icon }
               })} key={key} className='w-full h-40 relative flex flex-row items-center justify-between border-[1.5px] border-[#3352cc] p-2 my-2 rounded-xl'>
-    
                 <View className='flex flex-row items-center justify-between pr-10 gap-2'>
                   <Image className='w-24 rounded-xl h-24' source={{uri:item?.type?.icon}}/>
                   <View>

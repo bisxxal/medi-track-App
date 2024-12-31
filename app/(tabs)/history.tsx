@@ -86,8 +86,6 @@ export default function History() {
              }
            />  
          }
-
-
       { loading &&  <View className='flex items-center justify-center w-full h-80'>
          <Feather className=' animate-spin ' name="loader" size={24} color="gray" />
          </View>}
