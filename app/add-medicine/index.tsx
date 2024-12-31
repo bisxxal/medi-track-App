@@ -10,9 +10,7 @@ const AddMedicine  = () => {
     <Image className=' w-full h-[300px]' source={require('../../assets/images/consult.png')} /> 
     <TouchableOpacity className=' absolute top-2 left-3' onPress={() => router.back()}>              
     <Ionicons name="arrow-back-outline" size={24} color="black" />
-    </TouchableOpacity>
-
-    
+    </TouchableOpacity> 
       <AddNewMedicine/>
     </ScrollView>
   )

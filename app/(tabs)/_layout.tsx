@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import Entypo from '@expo/vector-icons/Entypo';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { getLocalStorage } from '@/service/Storage';
-
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 const tabLayout = () => {
 
   const router = useRouter()
@@ -42,6 +42,13 @@ const tabLayout = () => {
 <FontAwesome5 name="capsules" size={25} color={color} />
       )  
     }}
+    /> 
+    <Tabs.Screen name="history" 
+    options={{
+      tabBarIcon: ({color, size}) => (
+        <MaterialIcons name="history" size={25} color={color} />
+      )  
+    }}
     />
     <Tabs.Screen name="Profile" 
     options={{
@@ -50,6 +57,7 @@ const tabLayout = () => {
       )  
     }}
     />
+   
     
    </Tabs>
   )

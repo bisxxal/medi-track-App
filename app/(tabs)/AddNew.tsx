@@ -1,11 +1,11 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-
+import { Image, ScrollView, Text, View } from 'react-native'
+import AddMedicine from '../add-medicine' 
 const Addnewr = () => {
   return (
-    <View>
-      <Text>Addnewr.</Text>
-    </View>
+    <ScrollView className='p-2 relative'> 
+     <AddMedicine/>  
+    </ScrollView>
   )
 }
 

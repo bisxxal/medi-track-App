@@ -5,8 +5,8 @@ import moment from 'moment';
 import { and, collection, getDocs, or, query, where } from 'firebase/firestore';
 import { db } from '@/config/FirebaseConfig';
 import NoMedicines from './NoMedicines';
-import { useRouter } from 'expo-router';
-
+import { useRouter } from 'expo-router'; 
+import MedicineCard from './MedicineCard';
 interface Range {
   day: string;
   date: string;
@@ -52,6 +52,7 @@ const MedicineList = () => {
     setLoading(false)
    }
   }
+ 
   return (
     <View className='w-full mt-7'>
         <Image className='w-[95%] rounded-3xl h-80 mx-auto' source={require('../assets/images/medication.jpeg')}/>
@@ -74,24 +75,9 @@ const MedicineList = () => {
         data={medList}
         onRefresh={()=>getMedicineList(selectedDate)}
         refreshing={loading}
-        renderItem={({item , index})=>(
-          <TouchableOpacity onPress={()=>router.push({
-            pathname:'/action-model',
-           params:{...item , selectedDate:selectedDate}
-          })} key={index} className='w-full h-40 flex flex-row items-center justify-between border-[1.5px] border-[#3352cc] p-2 my-2 rounded-xl'>
-
-            <View className='flex flex-row items-center justify-between pr-10 gap-2'>
-              <Image className='w-24 rounded-xl h-24' source={{uri:item?.type?.icon}}/>
-              <View>
-                <Text className='text-lg font-semibold'>{item.name}</Text>
-                <Text className='text-sm'>{item.dosage}  {item.type.name}</Text>
-                <Text className='text-sm'>{item.when}</Text>
-                <Text className='text-lg font-semibold'> </Text> 
-                <Text className='text-lg font-semibold'>{item.reminder}</Text> 
-              </View> 
-            </View>
-          </TouchableOpacity>
-        )}
+        renderItem={({item , index})=>
+       ( <MedicineCard item={item} selectedDate={selectedDate} key={index} />)  
+        }
       /> : <NoMedicines/>
     }
     </View>
